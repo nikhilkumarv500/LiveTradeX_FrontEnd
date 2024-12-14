@@ -1,6 +1,6 @@
 # Trade X - Live Stock Trading App
 
-**Trade X** is a cutting-edge live stock trading application built with a robust backend powered by Spring Boot and a dynamic frontend crafted with React. It leverages WebSockets to provide real-time updates and seamless user interactions.
+**Trade X** is a live stock trading application built with Spring Boot, React, and PostgreSQL. It provides a real-time stock trading experience using WebSockets to broadcast live updates to all active users. Users can monitor stock prices, make purchases, and view stock-related statistics in a live environment.
 
 ---
 
@@ -20,6 +20,7 @@
 
 - **Backend:** Spring Boot
 - **Frontend:** React
+- **Database:** PostgreSQL
 - **Real-Time Communication:** WebSockets
 
 ---
@@ -29,6 +30,7 @@
 ### Prerequisites
 - Java (for Spring Boot backend)
 - Node.js and npm (for React frontend)
+- PostgreSQL database
 
 ### Installation
 1. Clone the repository:
