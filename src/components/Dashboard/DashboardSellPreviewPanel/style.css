@@ -1,0 +1,277 @@
+.dashboardSellPreviewInnerPanelContainerSplitMainContainer {
+  width: 100%;
+  display: flex;
+  gap: 1%;
+  padding: 1%;
+}
+
+.dashboardSellPreviewInnerPanelContainerRightSideMainContainer {
+  height: fit-content;
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.dashboardSellPreviewInnerPanelContainerRightSideMoreDetailsPanel {
+  background: rgba(255, 255, 255, 0.2);
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+  width: 70%;
+
+  padding: 1%;
+}
+
+.dashboardSellPreviewInnerPanelContainerRightSideMoreDetailsPanelHeaderLabel {
+  font-weight: bold;
+}
+
+.dashboardSellPreviewInnerPanelContainerRightSideMoreDetailsPanelBodyContainer {
+  font-size: 14px;
+}
+
+.dashboardSellPreviewInnerPreviewRightSideTotalPeopleInvestedPieChart {
+  width: 70%;
+  height: fit-content;
+
+  padding-left: 1%;
+  padding-right: 1%;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+
+  /* margin-top: 5%; */
+}
+
+.dashboardSellInnerPreviewRightSideTotalPeopleInvestedPieChartHeaderLabel {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.dashboardSellPreviewInnerPreviewRightSideTotalPeopleInvestedPieChartBodyContent {
+  font-size: 12px;
+}
+
+.dashboardSellPreviewInnerPreviewRightSideTotalPeopleInvestedPieChartAlignCenterContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardSellPreviewInnerPreviewRightSideTotalPeopleInvestedPieChartResizeContainer {
+  /* background-color: black; */
+  width: 80%;
+}
+
+/* ------------------------------------ */
+
+.dashboardSellPreviewInnerPanelContainer {
+  height: fit-content;
+  padding: 1%;
+  width: 70%;
+
+  background: rgba(255, 255, 255, 0.2);
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsLeftContainer {
+  height: fit-content;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsContainer {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsLeftSecondaryContainer {
+  font-size: 14px;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsLeftLabelContainer {
+  font-size: large;
+  font-weight: bold;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsRightContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  height: fit-content;
+  gap: 5px;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsRightPricePercContainer {
+  display: flex;
+  align-items: end;
+  height: fit-content;
+  gap: 1rem;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsRightPercContainer {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.dashboardSellPreviewInnerPanelTopDetailsRightPriceContainer {
+  display: flex;
+  /* align-items: end; */
+  gap: 3px;
+  font-size: large;
+}
+
+.dashboardSellPreviewInnerPanelContainerMiddleLineGraphConatainer {
+  width: 100%;
+  height: 100%;
+  max-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.dashboardSellPreviewFooterPanelLeftRightDivider {
+  border: 1px;
+  border-color: rgb(243, 240, 240, 0.2);
+  border-style: solid;
+  /* height: max-content; */
+}
+
+.dashboardSellPreviewFooterPanelContainer {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+
+  /* background-color: white; */
+  padding-top: 2%;
+}
+
+.dashboardSellPreviewFooterPanelLeftContainer {
+  font-size: 12px;
+}
+
+.buyStockPreviewFooterPanelRightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+
+.dashboardSellPreviewFooterPanelRightContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  gap: 5%;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantityContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantitySelectNoContainer {
+  display: flex;
+  gap: 3px;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantityDisplayField {
+  background-color: #ffffff;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  height: fit-content;
+  user-select: none;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantitySelectNoPlusBtn {
+  background-color: #6c757d;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  cursor: pointer;
+  user-select: none;
+  height: fit-content;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantitySelectNoMinusBtn {
+  background-color: #6c757d;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  cursor: pointer;
+  user-select: none;
+  height: fit-content;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantitySelectNoPlusBtn:hover,
+.dashboardSellPreviewFooterPanelRightSelectStockQuantitySelectNoMinusBtn:hover {
+  background-color: #aeb2b6;
+  color: black;
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantityBuyBtn {
+  background-color: #72b2eb;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+  cursor: pointer;
+
+  /* margin-top: 20px; */
+}
+
+.dashboardSellPreviewFooterPanelRightSelectStockQuantityBuyBtn:hover {
+  background-color: #3da1ff;
+}
+
+.colorTextRedPanel {
+  background-color: rgb(248, 135, 135);
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+  color: black;
+}
+
+.colorTextBluePanel {
+  background-color: rgb(176, 241, 176);
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+  color: black;
+}
+
+.whiteBorderLine {
+  border: 1px;
+  border-color: rgb(243, 240, 240, 0.2);
+  border-style: solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

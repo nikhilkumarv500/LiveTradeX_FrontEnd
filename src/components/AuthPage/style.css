@@ -1,0 +1,150 @@
+.LoginContainer {
+  height: 100vh;
+  width: 100%;
+}
+
+.LoginFormHeaderProjectNameImageContainer {
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.AuthPageWhiteBorderLineCenterContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.AuthPageWhiteBorderLine {
+  border: 1px;
+  color: rgba(197, 184, 184, 0.2);
+  border-style: solid;
+  width: 50%;
+}
+
+.LoginFormHeaderProjectTextContainer {
+  font-size: 22px;
+  font-weight: 600;
+  height: fit-content;
+  /* background-color: black; */
+}
+
+.LoginFormHeaderProjectImageContainer {
+  background-color: white;
+  height: fit-content;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.breakHorizontallyIntoTwoLogin {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftHorizontalContainerLogin {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightHorizontalContainerLogin {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../../assets/AuthRightSIde.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leftSideInnerContainerLogin {
+  color: white;
+  background-color: rgba(197, 184, 184, 0.2);
+  height: fit-content;
+  width: 50%;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  left: 0%;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 1px 1px 3px black;
+}
+
+.leftSideInnerContainerLogin:hover {
+  transition: background-color 0.4s ease;
+  box-shadow: 1px 1px 9px black;
+  background-color: rgba(197, 184, 184, 0.3);
+}
+
+.LoginFormHeaderCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.LoginPageButton {
+  width: 30%;
+}
+
+.LoginPageLeftPanelFooterMoveMiddle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.LoginPageLeftPanelFooterMoveMiddle > p {
+  display: flex;
+}
+.LoginPageLeftPanelFooterMoveMiddle > p > div {
+  text-decoration: none;
+  color: red;
+  margin-left: 5px;
+}
+.LoginPageLeftPanelFooterMoveMiddle > p > div:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.LoginPageMiddleBodyToAddPaddingFromRight {
+  padding-right: 10%;
+  padding-left: 10%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .rightHorizontalContainerLogin {
+    display: none;
+  }
+
+  .LoginPageButton {
+    width: 50%;
+  }
+
+  .LoginPageLeftPanelFooterMoveMiddle > p {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Right side----------------------------------------------- */
+
+.rightHorizontalContainerLogin {
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVmTmQxsGTW76iGI5XiaSHbAt2S9XqLNQVmw&s");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}

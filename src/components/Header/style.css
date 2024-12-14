@@ -1,0 +1,71 @@
+.HeaderContainer .navbar {
+  background-color: transparent !important;
+}
+
+.HeaderContainer {
+  color: white;
+
+  /* height: 13vh; */
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2); */
+  box-shadow: 1px 1px 5px black;
+}
+
+.innerHeaderPopUpMenu {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpnN3_aUXa7pviaYZXUrxlU_NPIslJtnpE8EkdHDEFjf6RoLqs0Rt0ZJH&s=10");
+  /* color: white; */
+  /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;     */
+  background-color: black;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+.navBarRightLinks {
+  text-decoration: none;
+}
+
+.navBarRightLinks:hover {
+  transition: color 0.4s ease;
+  color: rgb(173, 173, 173);
+}
+
+.navBarRightLinksColorBlack {
+  color: black;
+}
+
+.navBarRightLinksColorWhite {
+  color: white;
+}
+
+.navBarRightLinksOnActive {
+  color: aqua;
+  border-bottom: 2px solid rgba(11, 157, 247, 0.5);
+}
+
+.navBarHeaderVerticalPartioningLine {
+  border: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbarHeaderWalletBalanceContainer {
+  background-color: white;
+  padding-left: 1%;
+  padding-right: 1%;
+
+  background: rgba(249, 248, 248, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 1px 5px black;
+}

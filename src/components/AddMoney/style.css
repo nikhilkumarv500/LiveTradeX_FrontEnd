@@ -1,0 +1,105 @@
+.addMoneyOuterMainContainer {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addMoneyInnerMainContainer {
+  width: 30%;
+  height: fit-content;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: rgba(180, 178, 178, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.addMoneyInnerMainContainer:hover {
+  transition: background-color 0.4s ease;
+  box-shadow: 1px 1px 9px black;
+  background-color: rgba(180, 178, 178, 0.3);
+}
+
+.addMoneyInnerContainerLabel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.addMoneyInnerContainerLabelText {
+  font-size: 25px;
+  color: white;
+}
+
+.addMoneyInnerContainerFields {
+  color: white;
+}
+
+.addMoneyPageButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.addMoneyAvailableCouponsContainer {
+  /* background-color: white; */
+}
+
+.addMoneyAvailableCouponListContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.addMoneyAvailableCouponLabel {
+  color: white;
+}
+
+.addMoneyIndividualCouponContainer {
+  border-radius: 5px;
+  color: white;
+  padding: 1%;
+  width: 40%;
+
+  background-color: rgba(180, 178, 178, 0.2);
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+
+  cursor: pointer;
+}
+
+.addMoneyIndividualCouponContainer:hover {
+  background-color: rgb(57, 57, 57);
+}
+
+.addMoneyWhiteBottomDividerLine {
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: rgba(180, 178, 178, 0.2);
+}
+
+.addMoneyIndividualCouponLabel {
+  font-size: 15px;
+}
+
+.addMoneyIndividualCouponDescription {
+  font-size: 10px;
+}

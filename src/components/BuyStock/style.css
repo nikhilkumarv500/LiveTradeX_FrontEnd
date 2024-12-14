@@ -1,0 +1,293 @@
+.buyStockMainContainer {
+  /* height: 87vh;  */
+  height: fit-content;
+  width: 100%;
+}
+
+.buyStockTopHitStocksDiv {
+  margin-top: 1%;
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.buyStockTopHitStocksDivInnerCenterTrainPanel {
+  width: 90%;
+}
+
+.buyStockTopHitStocksMainContainer {
+  margin-top: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /*background-color: rgba(180, 178, 178, 0.3);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);  
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px; 
+  box-shadow: 0px 0px 5px black;*/
+}
+
+.swiper .swiper-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.buyStockTopHitStocksLabel {
+  width: 90%;
+  color: white;
+  font-size: 25px;
+}
+
+/*------------------------------- */
+
+.buyStockListAllStocksContainer {
+  width: 100%;
+  height: fit-content;
+  /* background-color: white; */
+  margin-top: 2%;
+}
+
+.buyStockListAllStocksLabel,
+.buyStockListAllStocksPreviewLabel {
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buyStockPreviewInnerPanelTopDetailsRightCrossMarkContainer {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px black;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buyStockPreviewInnerPanelTopDetailsRightCrossMarkContainer:hover {
+  background-color: rgb(196, 196, 196);
+  color: white;
+}
+
+.buyStockListAllStocksTablePreviewContainer {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: fit-content;
+}
+
+.buyStockListAllStocksTableContainer {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  height: fit-content;
+  /* overflow: hidden; */
+  /* background-color: transparent; */
+  font-size: 12px;
+  width: 30%;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.buyStockListAllStocksPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+  padding: 1%;
+
+  width: 60%;
+  height: fit-content;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.buyStockListAllStocksEmptyPreviewMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+  padding: 1%;
+
+  width: fit-content;
+  height: fit-content;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.buyStockListAllStocksEmptyPreviewLabel {
+}
+
+.buyStockListAllStocksTableToggleForUnAvailContainer {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+
+.buyStockListAllStocksTableToggleForUnAvailToggleButton {
+}
+
+.buyStockListAllStocksTable {
+  padding: 3%;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.table {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.table td,
+.table th {
+  color: white !important;
+  text-align: center;
+  background-color: transparent !important;
+}
+
+.table tr:hover {
+  background-color: rgb(172, 168, 168, 0.2);
+  box-shadow: 0px 0px 5px black;
+}
+
+.table thead tr:hover {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px black;
+}
+
+.table td i,
+.table th i,
+.table th span,
+.table th svg,
+.table td span,
+.table td svg {
+  color: white !important;
+}
+
+.table thead tr {
+  border-bottom: #6c757d;
+  border-style: solid;
+}
+
+.dropdown-menu {
+  font-size: 12px !important;
+}
+
+.dropdown-toggle {
+  font-size: 12px !important;
+  padding: 4px 4px !important;
+}
+
+.table-footer-paginator-buttons {
+  padding: 5px 5px;
+  font-size: 12px;
+  height: fit-content;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.table-footer-paginator-buttons:hover {
+  background-color: rgb(160, 159, 159);
+  box-shadow: 0px 0px 5px black;
+}
+
+.table-footer-paginator-currentPageNumber {
+  background-color: #6c757d;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.table-footer-paginator-currentPageNumber-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.colorTextRed {
+  color: rgb(250, 158, 158);
+}
+
+.colorTextBlue {
+  color: rgb(176, 241, 176);
+}
+
+.buyStockListAllStocksEmptyPreviewimage {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+
+  margin-top: 5px;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}

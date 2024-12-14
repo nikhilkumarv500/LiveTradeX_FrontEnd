@@ -1,0 +1,272 @@
+.dashBoardMainContainer {
+  width: 100%;
+  height: fit-content;
+}
+
+.upperDashBoardUserDetailsContainer {
+  margin-top: 1%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  padding: 2%;
+  width: 100%;
+
+  /* background-color: rgba(180, 178, 178, 0.3);
+   backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+   border-radius: 5px;
+  box-shadow: 0px 0px 5px black;  */
+}
+
+.upperDashBoardUserMoneyDetailsPanel {
+  height: fit-content;
+  width: 20%;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.upperDashBoardUserMoneyDetailsPanelLabel {
+  font-weight: bold;
+}
+
+.middleDashBoardViewListAllStocksContainer {
+  width: 100%;
+  height: fit-content;
+  /* background-color: white; */
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.middleDashBoardViewListAllStocksTableContainer {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  height: fit-content;
+  /* overflow: hidden; */
+  /* background-color: transparent; */
+  font-size: 12px;
+  width: 40%;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.middleDashBoardViewListAllStocksSellTableLabel {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.middleDashBoardListAllStocksEmptyPreviewLabel {
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.middleDashBoardListAllStocksEmptyPreviewLabelNonSelectPreviewPanel {
+  color: white;
+  font-size: medium;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.middleDashBoardViewListAllStocksSellEmptyPreview {
+  width: 55%;
+  height: fit-content;
+
+  padding: 1%;
+  color: white;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.middleDashBoardViewListAllStocksSellEmptyPreviewNonSelectPanelBG {
+  width: fit-content;
+  height: fit-content;
+
+  padding: 1%;
+  color: white;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.middleDashBoardViewListAllStocksSellEmptyPreviewimage {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+
+  margin-top: 5px;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.middledashboardSellPreviewInnerPanelTopDetailsRightCrossMarkContainer {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px black;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.middledashboardSellPreviewInnerPanelTopDetailsRightCrossMarkContainer:hover {
+  background-color: rgb(196, 196, 196);
+  color: white;
+}
+
+/* History Table */
+
+.dashboardHistoryMainContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+  /* background-color: white; */
+}
+
+.dashboardHistoryInnerContainer {
+  width: 80%;
+  height: fit-content;
+
+  padding: 1%;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.dashboardHistoryLabelContainer {
+  width: 100%;
+}
+
+.dashboardHistoryMainLabel {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.dashboardHistoryTableContainer {
+  width: 100;
+  height: fit-content;
+}
+
+.dashboardHistoryDeleteEntryButton {
+  background-color: #c81100;
+
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+  cursor: pointer;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: small;
+
+  width: fit-content;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboardHistoryDeleteEntryButton:hover {
+  background-color: #9f0e01;
+}
+
+.dashboardEmptyBoughtStocksContainer {
+  width: fit-content;
+  height: fit-content;
+
+  padding: 1%;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  background-color: rgba(180, 178, 178, 0.1);
+  /* backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);  */
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.dashboardEmptyBoughtStocksHeaderLabel {
+  font-size: 20px;
+}
