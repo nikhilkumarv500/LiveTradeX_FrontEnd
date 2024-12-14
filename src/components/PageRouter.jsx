@@ -18,6 +18,7 @@ import AddMoney from "./AddMoney/AddMoney.jsx";
 import WebSocketConfig from "./WebSocketConfig/WebSocketConfig.jsx";
 import useWsStore from "./SideComponents/WebSocketStore.jsx";
 import useStore from "./SideComponents/ContextStore.jsx";
+import { deepClone } from "./Utils/Utils.jsx";
 
 const PageRouter = () => {
   const { store, setStore } = useStore();
@@ -71,7 +72,7 @@ const PageRouterContent = ({
       )}
       <Toastify />
       <WebSocketConfig
-        wsStore={{ ...structuredClone(wsStore) }}
+        wsStore={{ ...deepClone(wsStore) }}
         setWsStore={setWsStore}
         socketOpen={socketOpen}
       />

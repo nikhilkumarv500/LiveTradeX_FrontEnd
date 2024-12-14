@@ -20,6 +20,7 @@ import useStore from "../SideComponents/ContextStore.jsx";
 import useWsStore from "../SideComponents/WebSocketStore.jsx";
 
 import emptyPreviewBoy from "../../assets/emptyPreviewBoy.jpg";
+import { deepClone } from "../Utils/Utils.jsx";
 
 const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
   const { store, setStore } = useStore();
@@ -31,17 +32,17 @@ const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
   const { wsStore, setWsStore } = useWsStore();
 
   const [tableData, setTableData] = useState(
-    structuredClone(wsStore?.listAllStocks || [])
+    deepClone(wsStore?.listAllStocks || [])
   );
   const [showUnAvailableStocks, setShowUnAvailableStocks] = useState(false);
 
   const [selectedStock, setSelectedStock] = useState(null);
 
   useEffect(() => {
-    setTableData([...structuredClone(wsStore?.listAllStocks || [])]);
+    setTableData([...deepClone(wsStore?.listAllStocks || [])]);
 
     if (selectedStock) {
-      structuredClone(wsStore?.listAllStocks || []).map((item) => {
+      deepClone(wsStore?.listAllStocks || []).map((item) => {
         if (selectedStock.id === item.id) {
           setSelectedStock({ ...item });
         }
@@ -179,7 +180,7 @@ const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
           Hot news
           {/* <button
             onClick={() => {
-              var newDataList = structuredClone(tableData);
+              var newDataList = deepClone(tableData);
               newDataList = newDataList.map((item) => {
                 var prevPrecList = item.prevPercentages;
                 prevPrecList = [...prevPrecList, prevPrecList[0]];

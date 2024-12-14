@@ -19,6 +19,7 @@ import useStore from "../../SideComponents/ContextStore.jsx";
 import notify from "../../SideComponents/Toastify.jsx";
 import axios from "axios";
 import useWsStore from "../../SideComponents/WebSocketStore.jsx";
+import { deepClone } from "../../Utils/Utils.jsx";
 
 ChartJS.register(
   CategoryScale,
@@ -104,11 +105,11 @@ const BuyStockPreviewPanel = ({
   const [selectQuantity, setSelectQuantity] = useState(1);
 
   const purchaseStocksApi = async () => {
-    setStore({ ...structuredClone(store), loadingSrc: true });
+    setStore({ ...deepClone(store), loadingSrc: true });
 
     let payload = {
-      email: structuredClone(store)?.userDetailsItem?.email,
-      password: structuredClone(store)?.userDetailsItem?.password,
+      email: deepClone(store)?.userDetailsItem?.email,
+      password: deepClone(store)?.userDetailsItem?.password,
       noOfStocks: selectQuantity,
       stockId: id,
     };
@@ -122,19 +123,19 @@ const BuyStockPreviewPanel = ({
       res = await axios.post(`${apiUrl}/userStocks/buyStock`, payload);
 
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
 
       finalObj = {
-        ...structuredClone(store),
+        ...deepClone(store),
       };
 
       // reload bought stock List for a email
 
       payload = {
-        email: structuredClone(store)?.userDetailsItem?.email,
+        email: deepClone(store)?.userDetailsItem?.email,
       };
 
       res = await axios.post(
@@ -142,7 +143,7 @@ const BuyStockPreviewPanel = ({
         payload
       );
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -156,7 +157,7 @@ const BuyStockPreviewPanel = ({
 
       res = await axios.get(`${apiUrl}/stocks/listAllStocks`);
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -180,7 +181,7 @@ const BuyStockPreviewPanel = ({
       //reload purchase history table
 
       payload = {
-        email: structuredClone(store)?.userDetailsItem?.email,
+        email: deepClone(store)?.userDetailsItem?.email,
       };
 
       res = await axios.post(
@@ -188,7 +189,7 @@ const BuyStockPreviewPanel = ({
         payload
       );
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -201,13 +202,13 @@ const BuyStockPreviewPanel = ({
       //reload user details like account balance, investedAmount
 
       payload = {
-        email: structuredClone(store)?.userDetailsItem?.email,
-        password: structuredClone(store)?.userDetailsItem?.password,
+        email: deepClone(store)?.userDetailsItem?.email,
+        password: deepClone(store)?.userDetailsItem?.password,
       };
 
       res = await axios.post(`${apiUrl}/auth/specificUserDetails`, payload);
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -224,7 +225,7 @@ const BuyStockPreviewPanel = ({
     } catch (err) {
       console.log("in BuyStocks Preview: " + err);
 
-      setStore({ ...structuredClone(store), loadingSrc: false });
+      setStore({ ...deepClone(store), loadingSrc: false });
       notify("in BuyStocks Preview: " + err, true);
 
       return;
@@ -467,9 +468,7 @@ const BuyStockPreviewPanel = ({
           <div className="whiteBorderLine"></div>
 
           <div className="buyStockInnerPreviewRightSideTotalPeopleInvestedPieChartBodyContent">
-            <div>{`Total users : ${
-              structuredClone(wsStore)?.userCount || 0
-            }`}</div>
+            <div>{`Total users : ${deepClone(wsStore)?.userCount || 0}`}</div>
             <div>{`Invested users : ${totalInvestedUserCnt}`}</div>
           </div>
 
@@ -478,7 +477,7 @@ const BuyStockPreviewPanel = ({
               <FullOpPieChart
                 key={id + name + remQuantity + purchasedQuantity}
                 listData={generatePeopleInvestedList(
-                  structuredClone(wsStore)?.userCount,
+                  deepClone(wsStore)?.userCount,
                   totalInvestedUserCnt
                 )}
               />

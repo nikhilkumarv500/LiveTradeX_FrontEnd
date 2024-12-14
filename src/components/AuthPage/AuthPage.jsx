@@ -11,6 +11,7 @@ import ProjectLogo from "../../assets/ProjectLogo.png";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
+import { deepClone } from "../Utils/Utils.jsx";
 const MySwal = withReactContent(Swal);
 
 const apiUrl = process.env.REACT_APP_BACKEND_SERVER_URL;
@@ -95,7 +96,7 @@ const LoginPage = ({ setSocketOpen }) => {
   });
 
   const callAuthRegisterApi = async () => {
-    setStore({ ...structuredClone(store), loadingSrc: true });
+    setStore({ ...deepClone(store), loadingSrc: true });
 
     const payload = {
       email: userData?.email == "" ? null : userData?.email,
@@ -117,13 +118,13 @@ const LoginPage = ({ setSocketOpen }) => {
     } catch (err) {
       console.log("in login Auth: " + err);
 
-      setStore({ ...structuredClone(store), loadingSrc: false });
+      setStore({ ...deepClone(store), loadingSrc: false });
       notify("in login Auth: " + err, true);
 
       return;
     }
 
-    setStore({ ...structuredClone(store), loadingSrc: false });
+    setStore({ ...deepClone(store), loadingSrc: false });
     notify("Registered Successfully");
 
     setUserData({
@@ -135,7 +136,7 @@ const LoginPage = ({ setSocketOpen }) => {
   };
 
   const callAuthLoginApi = async () => {
-    setStore({ ...structuredClone(store), loadingSrc: true });
+    setStore({ ...deepClone(store), loadingSrc: true });
 
     const payload = {
       email: userData?.email == "" ? null : userData?.email,
@@ -150,7 +151,7 @@ const LoginPage = ({ setSocketOpen }) => {
       res = await axios.post(`${apiUrl}/auth/userLogin`, payload);
 
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
 
         return;
@@ -172,7 +173,7 @@ const LoginPage = ({ setSocketOpen }) => {
     } catch (err) {
       console.log("in login Auth: " + err);
 
-      setStore({ ...structuredClone(store), loadingSrc: false });
+      setStore({ ...deepClone(store), loadingSrc: false });
       notify("in login Auth: " + err, true);
 
       return;
@@ -182,7 +183,7 @@ const LoginPage = ({ setSocketOpen }) => {
       res = await axios.get(`${apiUrl}/stocks/listAllStocks`);
 
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
 
         return;
@@ -202,7 +203,7 @@ const LoginPage = ({ setSocketOpen }) => {
     } catch (err) {
       console.log("in login listAllStocks: " + err);
 
-      setStore({ ...structuredClone(store), loadingSrc: false });
+      setStore({ ...deepClone(store), loadingSrc: false });
       notify("in login Auth listAllStocks: " + err, true);
 
       return;

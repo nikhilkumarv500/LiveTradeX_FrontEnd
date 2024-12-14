@@ -19,6 +19,7 @@ import useStore from "../../SideComponents/ContextStore.jsx";
 import notify from "../../SideComponents/Toastify.jsx";
 import axios from "axios";
 import useWsStore from "../../SideComponents/WebSocketStore.jsx";
+import { deepClone } from "../../Utils/Utils.jsx";
 
 ChartJS.register(
   CategoryScale,
@@ -84,11 +85,11 @@ const DashboardSellPreviewPanel = ({
   const [selectQuantity, setSelectQuantity] = useState(1);
 
   const dashboardSellApi = async () => {
-    setStore({ ...structuredClone(store), loadingSrc: true });
+    setStore({ ...deepClone(store), loadingSrc: true });
 
     var payload = {
-      email: structuredClone(store)?.userDetailsItem?.email,
-      password: structuredClone(store)?.userDetailsItem?.password,
+      email: deepClone(store)?.userDetailsItem?.email,
+      password: deepClone(store)?.userDetailsItem?.password,
       noOfStocks: selectQuantity,
       stockId: stockId,
       purchaseId: purchaseId,
@@ -104,7 +105,7 @@ const DashboardSellPreviewPanel = ({
       res = await axios.post(`${apiUrl}/userStocks/sellStock`, payload);
 
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -113,10 +114,10 @@ const DashboardSellPreviewPanel = ({
 
       // update user details like account balance
       finalObj = {
-        ...structuredClone(store),
+        ...deepClone(store),
         userDetailsItem: {
           ...res.userDetailsItem,
-          password: structuredClone(store).userDetailsItem?.password,
+          password: deepClone(store).userDetailsItem?.password,
         },
       };
 
@@ -125,7 +126,7 @@ const DashboardSellPreviewPanel = ({
         `${apiUrl}/stocks/listAllStocks`
       );
       if (listAllStocksApiRes?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(listAllStocksApiRes?.data?.message, true);
         return;
       }
@@ -182,7 +183,7 @@ const DashboardSellPreviewPanel = ({
       //reload purchase history table
 
       payload = {
-        email: structuredClone(store)?.userDetailsItem?.email,
+        email: deepClone(store)?.userDetailsItem?.email,
       };
 
       res = await axios.post(
@@ -190,7 +191,7 @@ const DashboardSellPreviewPanel = ({
         payload
       );
       if (res?.data?.success === false) {
-        setStore({ ...structuredClone(store), loadingSrc: false });
+        setStore({ ...deepClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -202,7 +203,7 @@ const DashboardSellPreviewPanel = ({
     } catch (err) {
       console.log("In Dashboard sellStocks Preview: " + err);
 
-      setStore({ ...structuredClone(store), loadingSrc: false });
+      setStore({ ...deepClone(store), loadingSrc: false });
       notify("In Dashboard sellStocks: " + err, true);
 
       return;
