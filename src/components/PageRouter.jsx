@@ -7,7 +7,7 @@ import Dashboard from "./Dashboard/Dashboard.jsx";
 import "./PageRouterStyle.css";
 import {
   BrowserRouter,
-  Routes,
+  Switch,
   Route,
   useLocation,
   useNavigate,
@@ -76,7 +76,7 @@ const PageRouterContent = ({
         socketOpen={socketOpen}
       />
       <LoadingScreen />
-      <Routes>
+      <Switch>
         <Route path="/" element={<AuthPage setSocketOpen={setSocketOpen} />} />
         <Route
           path="/buyStockPage"
@@ -98,7 +98,7 @@ const PageRouterContent = ({
             <AddMoney logoutWhenUnauthorizedUser={logoutWhenUnauthorizedUser} />
           }
         />
-      </Routes>
+      </Switch>
 
       <Footer />
     </>
