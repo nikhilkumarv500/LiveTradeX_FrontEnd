@@ -283,7 +283,7 @@ const BuyStockPreviewPanel = ({
       percentage >= 0 ? "rgb(176, 241, 176)" : "rgba(250, 158, 158)";
 
     setData({ ...upDatedData });
-    // setRefresh(refresh + 1);
+    setRefresh(refresh + 1);
     setSelectQuantity(1);
   };
 
