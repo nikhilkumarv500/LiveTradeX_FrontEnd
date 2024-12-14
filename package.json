@@ -27,7 +27,7 @@
     "sockjs-client": "^1.6.1",
     "stompjs": "^2.3.3",
     "sweetalert2-react-content": "^4.0.0",
-    "swiper": "^6.0.0",
+    "swiper": "^11.1.15",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
