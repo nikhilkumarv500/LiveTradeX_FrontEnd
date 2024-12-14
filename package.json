@@ -12,7 +12,7 @@
     "net": "^1.0.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.1",
-    "react-bootstrap/Offcanvas": "^1.6.1",
+    "react-bootstrap-offcanvas": "^1.6.1",
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-filter": "^1.3.3",
     "react-bootstrap-table2-paginator": "^2.1.2",
