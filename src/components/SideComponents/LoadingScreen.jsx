@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useState } from "react";
 import { RingLoader } from "react-spinners";
 import useStore from "./ContextStore";
 
