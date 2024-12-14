@@ -12,8 +12,8 @@ import filterFactory, { customFilter } from "react-bootstrap-table2-filter";
 import { PieChart } from "react-minimal-pie-chart";
 
 import "swiper/swiper-bundle.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, Virtual } from "swiper/modules";
+import { Swiper, SwiperSlide } from "react-id-swiper";
+// import { Navigation, Pagination, Autoplay, Virtual } from "swiper/modules";
 import FullOpPieChart from "../SideComponents/FullOpPieChart.jsx";
 import CrossMark from "../SideComponents/CrossMark.jsx";
 import useStore from "../SideComponents/ContextStore.jsx";
@@ -212,7 +212,7 @@ const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
                 disableOnInteraction: false,
               }}
               loop
-              modules={[Autoplay]}
+              // modules={[Autoplay]}
               breakpoints={{
                 1250: {
                   slidesPerView: 4,
