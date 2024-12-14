@@ -10,7 +10,7 @@ import useWsStore from "../SideComponents/WebSocketStore.jsx";
 import ProjectLogo from "../../assets/ProjectLogo.png";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const MySwal = withReactContent(Swal);
 
 const apiUrl = process.env.REACT_APP_BACKEND_SERVER_URL;
@@ -85,7 +85,7 @@ const LoginPage = ({ setSocketOpen }) => {
   const { store, setStore } = useStore();
   const { wsStore, setWsStore } = useWsStore();
 
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   const [userData, setUserData] = useState({
     name: "",
@@ -219,7 +219,7 @@ const LoginPage = ({ setSocketOpen }) => {
         " , have a nice day :)"
     );
 
-    navigate("/dashboardPage");
+    navigate.push("/dashboardPage");
 
     setUserData({
       name: "",

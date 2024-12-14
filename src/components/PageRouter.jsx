@@ -10,7 +10,7 @@ import {
   Switch,
   Route,
   useLocation,
-  useNavigate,
+  useHistory,
 } from "react-router-dom";
 import LoadingScreen from "./SideComponents/LoadingScreen.jsx";
 import notify, { Toastify } from "./SideComponents/Toastify.jsx";
@@ -49,11 +49,11 @@ const PageRouterContent = ({
   setStore,
 }) => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   const logoutWhenUnauthorizedUser = (store) => {
     if (!store.userDetailsItem?.email || !store.userDetailsItem?.password) {
-      navigate("/");
+      navigate.push("/");
       notify("Unauthorized user !", true);
       notify("Please Login again !", true);
       //   setSocketOpen("close");
