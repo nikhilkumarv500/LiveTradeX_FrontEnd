@@ -57,19 +57,4 @@
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Contributing
-
-Contributions are welcome! Please create a pull request or open an issue for feature requests or bug fixes.
-
----
-
-## Contact
-
-For inquiries, please contact [your-email@example.com].
 
