@@ -22,6 +22,8 @@ const LoginPage = ({ setSocketOpen }) => {
       title: "Welcome!",
       html: (
         <div style={{ fontSize: "15px" }}>
+          <p>Please do not use any of your original email, passwords, etc...</p>
+          <br></br>
           <p>
             This website does not support phone (small screen view), please view
             only in desktop (big screens)
