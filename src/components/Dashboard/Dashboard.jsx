@@ -19,7 +19,6 @@ import dashboardProfit from "../../assets/dashboardProfit.png";
 import dashboardInvestedAmount from "../../assets/dashboardInvestedAmount.png";
 import dashboardWalletAmount from "../../assets/dashboardWalletAmount.png";
 import emptyPreviewBoy from "../../assets/emptyPreviewBoy.jpg";
-import { deepClone } from "../Utils/Utils.jsx";
 
 const apiUrl = process.env.REACT_APP_BACKEND_SERVER_URL;
 
@@ -36,8 +35,8 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
   const [tableData, setTableData] = useState(() => {
     let arr = [];
 
-    arr = deepClone(store?.userStocksItemList || []).map((item) => {
-      deepClone(wsStore?.listAllStocks || []).map((x) => {
+    arr = structuredClone(store?.userStocksItemList || []).map((item) => {
+      structuredClone(wsStore?.listAllStocks || []).map((x) => {
         if (x.id === item.stockId) {
           item.name = item.stockName;
           item.originalPrice = x.originalPrice;
@@ -59,8 +58,8 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
   });
 
   useEffect(() => {
-    let arr = deepClone(store?.userStocksItemList || []).map((item) => {
-      deepClone(wsStore?.listAllStocks || []).map((x) => {
+    let arr = structuredClone(store?.userStocksItemList || []).map((item) => {
+      structuredClone(wsStore?.listAllStocks || []).map((x) => {
         if (x.id === item.stockId) {
           item.name = item.stockName;
           item.originalPrice = x.originalPrice;
@@ -329,11 +328,11 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
   ];
 
   const deleteHistoryApi = async (historyId) => {
-    setStore({ ...deepClone(store), loadingSrc: true });
+    setStore({ ...structuredClone(store), loadingSrc: true });
 
     let payload = {
-      email: deepClone(store)?.userDetailsItem?.email,
-      password: deepClone(store)?.userDetailsItem?.password,
+      email: structuredClone(store)?.userDetailsItem?.email,
+      password: structuredClone(store)?.userDetailsItem?.password,
       historyId: historyId,
     };
 
@@ -347,14 +346,14 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
       res = await axios.post(`${apiUrl}/history/deleteByHistoryId`, payload);
 
       if (res?.data?.success === false) {
-        setStore({ ...deepClone(store), loadingSrc: false });
+        setStore({ ...structuredClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
 
       // update history table
       payload = {
-        email: deepClone(store)?.userDetailsItem?.email,
+        email: structuredClone(store)?.userDetailsItem?.email,
       };
 
       res = await axios.post(
@@ -363,7 +362,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
       );
 
       if (res?.data?.success === false) {
-        setStore({ ...deepClone(store), loadingSrc: false });
+        setStore({ ...structuredClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -371,14 +370,14 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
       res = res.data;
 
       finalObj = {
-        ...deepClone(store),
+        ...structuredClone(store),
         userStocksHistoryList: res,
       };
 
       // reload user Purchased stocks list
 
       payload = {
-        email: deepClone(store)?.userDetailsItem?.email,
+        email: structuredClone(store)?.userDetailsItem?.email,
       };
 
       res = await axios.post(
@@ -387,7 +386,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
       );
 
       if (res?.data?.success === false) {
-        setStore({ ...deepClone(store), loadingSrc: false });
+        setStore({ ...structuredClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -402,14 +401,14 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
       //reload user data like account balance
 
       payload = {
-        email: deepClone(store)?.userDetailsItem?.email,
-        password: deepClone(store)?.userDetailsItem?.password,
+        email: structuredClone(store)?.userDetailsItem?.email,
+        password: structuredClone(store)?.userDetailsItem?.password,
       };
 
       res = await axios.post(`${apiUrl}/auth/specificUserDetails`, payload);
 
       if (res?.data?.success === false) {
-        setStore({ ...deepClone(store), loadingSrc: false });
+        setStore({ ...structuredClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -420,7 +419,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
         ...finalObj,
         userDetailsItem: {
           ...res,
-          password: deepClone(store)?.userDetailsItem?.password,
+          password: structuredClone(store)?.userDetailsItem?.password,
         },
       };
 
@@ -429,7 +428,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
       res = await axios.get(`${apiUrl}/stocks/listAllStocks`);
 
       if (res?.data?.success === false) {
-        setStore({ ...deepClone(store), loadingSrc: false });
+        setStore({ ...structuredClone(store), loadingSrc: false });
         notify(res?.data?.message, true);
         return;
       }
@@ -447,7 +446,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
     } catch (err) {
       console.log("In Dashboard sellStocks Preview: " + err);
 
-      setStore({ ...deepClone(store), loadingSrc: false });
+      setStore({ ...structuredClone(store), loadingSrc: false });
       notify("In Dashboard sellStocks: " + err, true);
 
       return;
@@ -532,7 +531,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
               Total Profit
             </div>
             <div className="upperDashBoardUserMoneyDetailsPanelValue">
-              {deepClone(store)?.userDetailsItem?.profitMade + " ₹"}
+              {structuredClone(store)?.userDetailsItem?.profitMade + " ₹"}
             </div>
           </div>
           <div className="upperDashBoardUserMoneyDetailsPanelImage">
@@ -546,7 +545,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
               Amount Invested
             </div>
             <div className="upperDashBoardUserMoneyDetailsPanelValue">
-              {deepClone(store)?.userDetailsItem?.investedAmount + " ₹"}
+              {structuredClone(store)?.userDetailsItem?.investedAmount + " ₹"}
             </div>
           </div>
           <div className="upperDashBoardUserMoneyDetailsPanelImage">
@@ -560,7 +559,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
               Wallet Balance
             </div>
             <div className="upperDashBoardUserMoneyDetailsPanelValue">
-              {deepClone(store)?.userDetailsItem?.accountBalance + " ₹"}
+              {structuredClone(store)?.userDetailsItem?.accountBalance + " ₹"}
             </div>
           </div>
           <div className="upperDashBoardUserMoneyDetailsPanelImage">
@@ -657,7 +656,7 @@ const Dashboard = ({ logoutWhenUnauthorizedUser }) => {
                 <BootstrapTable
                   bootstrap4
                   keyField="id"
-                  data={deepClone(store.userStocksHistoryList || []).map(
+                  data={structuredClone(store.userStocksHistoryList || []).map(
                     (item) => {
                       item.profit =
                         item.noOfStocks *

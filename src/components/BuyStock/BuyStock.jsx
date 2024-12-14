@@ -12,15 +12,14 @@ import filterFactory, { customFilter } from "react-bootstrap-table2-filter";
 import { PieChart } from "react-minimal-pie-chart";
 
 import "swiper/swiper-bundle.css";
-import { Swiper, SwiperSlide } from "react-id-swiper";
-// import { Navigation, Pagination, Autoplay, Virtual } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, Virtual } from "swiper/modules";
 import FullOpPieChart from "../SideComponents/FullOpPieChart.jsx";
 import CrossMark from "../SideComponents/CrossMark.jsx";
 import useStore from "../SideComponents/ContextStore.jsx";
 import useWsStore from "../SideComponents/WebSocketStore.jsx";
 
 import emptyPreviewBoy from "../../assets/emptyPreviewBoy.jpg";
-import { deepClone } from "../Utils/Utils.jsx";
 
 const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
   const { store, setStore } = useStore();
@@ -32,17 +31,17 @@ const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
   const { wsStore, setWsStore } = useWsStore();
 
   const [tableData, setTableData] = useState(
-    deepClone(wsStore?.listAllStocks || [])
+    structuredClone(wsStore?.listAllStocks || [])
   );
   const [showUnAvailableStocks, setShowUnAvailableStocks] = useState(false);
 
   const [selectedStock, setSelectedStock] = useState(null);
 
   useEffect(() => {
-    setTableData([...deepClone(wsStore?.listAllStocks || [])]);
+    setTableData([...structuredClone(wsStore?.listAllStocks || [])]);
 
     if (selectedStock) {
-      deepClone(wsStore?.listAllStocks || []).map((item) => {
+      structuredClone(wsStore?.listAllStocks || []).map((item) => {
         if (selectedStock.id === item.id) {
           setSelectedStock({ ...item });
         }
@@ -180,7 +179,7 @@ const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
           Hot news
           {/* <button
             onClick={() => {
-              var newDataList = deepClone(tableData);
+              var newDataList = structuredClone(tableData);
               newDataList = newDataList.map((item) => {
                 var prevPrecList = item.prevPercentages;
                 prevPrecList = [...prevPrecList, prevPrecList[0]];
@@ -213,7 +212,7 @@ const BuyStock = ({ logoutWhenUnauthorizedUser }) => {
                 disableOnInteraction: false,
               }}
               loop
-              // modules={[Autoplay]}
+              modules={[Autoplay]}
               breakpoints={{
                 1250: {
                   slidesPerView: 4,

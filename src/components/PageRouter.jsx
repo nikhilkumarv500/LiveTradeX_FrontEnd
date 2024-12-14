@@ -7,10 +7,10 @@ import Dashboard from "./Dashboard/Dashboard.jsx";
 import "./PageRouterStyle.css";
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route,
   useLocation,
-  useHistory,
+  useNavigate,
 } from "react-router-dom";
 import LoadingScreen from "./SideComponents/LoadingScreen.jsx";
 import notify, { Toastify } from "./SideComponents/Toastify.jsx";
@@ -18,7 +18,6 @@ import AddMoney from "./AddMoney/AddMoney.jsx";
 import WebSocketConfig from "./WebSocketConfig/WebSocketConfig.jsx";
 import useWsStore from "./SideComponents/WebSocketStore.jsx";
 import useStore from "./SideComponents/ContextStore.jsx";
-import { deepClone } from "./Utils/Utils.jsx";
 
 const PageRouter = () => {
   const { store, setStore } = useStore();
@@ -50,11 +49,11 @@ const PageRouterContent = ({
   setStore,
 }) => {
   const location = useLocation();
-  const navigate = useHistory();
+  const navigate = useNavigate();
 
   const logoutWhenUnauthorizedUser = (store) => {
     if (!store.userDetailsItem?.email || !store.userDetailsItem?.password) {
-      navigate.push("/");
+      navigate("/");
       notify("Unauthorized user !", true);
       notify("Please Login again !", true);
       //   setSocketOpen("close");
@@ -72,12 +71,12 @@ const PageRouterContent = ({
       )}
       <Toastify />
       <WebSocketConfig
-        wsStore={{ ...deepClone(wsStore) }}
+        wsStore={{ ...structuredClone(wsStore) }}
         setWsStore={setWsStore}
         socketOpen={socketOpen}
       />
       <LoadingScreen />
-      <Switch>
+      <Routes>
         <Route path="/" element={<AuthPage setSocketOpen={setSocketOpen} />} />
         <Route
           path="/buyStockPage"
@@ -99,7 +98,7 @@ const PageRouterContent = ({
             <AddMoney logoutWhenUnauthorizedUser={logoutWhenUnauthorizedUser} />
           }
         />
-      </Switch>
+      </Routes>
 
       <Footer />
     </>

@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./style.css";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import useStore from "../SideComponents/ContextStore";
 import WebSocketConfig from "../WebSocketConfig/WebSocketConfig";
 import useWsStore from "../SideComponents/WebSocketStore";
